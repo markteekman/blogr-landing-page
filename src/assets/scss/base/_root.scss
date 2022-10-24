@@ -1,0 +1,17 @@
+// | -------------------------------------------------------------
+// | Root
+// | -------------------------------------------------------------
+
+@use "color" as *;
+
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+  --radius-small: 3px;
+  --radius-large: 6px;
+  --gap-default: 2rem;
+  --font-measure: 70ch;
+}
