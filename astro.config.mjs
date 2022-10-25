@@ -5,5 +5,5 @@ import tailwind from '@astrojs/tailwind'
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://markteekman.github.io',
-  base: '/frontend-mentor-challenge-starter'
+  base: '/blogr-landing-page/',
 })
