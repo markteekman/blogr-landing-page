@@ -1,10 +1,71 @@
-<footer>
-  <div class="padding-16">
-    <div class="container align-center">
-      <p class="size-12">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+<footer class="pt-16">
+  <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
+    <img class="mb-12 sm:col-span-2 lg:col-span-1 justify-self-center sm:justify-self-start" src="/logo.svg" alt="">
+    <div>
+      <h2 class="mb-6">Product</h2>
+      <nav aria-label="Procuct footer menu">
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <h2 class="mb-6">Company</h2>
+      <nav aria-label="Company footer menu">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <h2 class="mb-6">Connect</h2>
+      <nav aria-label="Connect footer menu">
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="pt-12 pb-2">
+    <div class="container">
+      <p class="size-14 text-center sm:text-left">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
         Coded by <a href="https://markteekman.nl">Mark Teekman</a>.
+        Build with the <a href="https://github.com/markteekman/frontend-mentor-challenge-starter">Frontend Mentor Challenge Starter</a>.
       </p>
     </div>
   </div>
 </footer>
+
+<style lang="scss">
+  footer {
+    color: var(--theme-footer-text);
+    background-color: var(--theme-footer-bg);
+    border-top-right-radius: 6rem;
+
+    h2 {
+      @apply text-base;
+    }
+
+    a {
+      display: inline-block;
+      color: var(--theme-body-text);
+      margin-bottom: 0.5rem;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: var(--theme-cta-text);
+      }
+    }
+  }
+</style>
