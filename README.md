@@ -54,11 +54,14 @@ Users should be able to:
 
 ### What I learned
 
-👉 ADD CONTENT HERE.
+- How the `<picture>` element works.
+- How to build a theme switcher with CSS variables.
+- How to change the color of the SVG as an image src with the `filter` property.
+- I already knew about `<hgroup>` but in this project I started using it more extensively.
 
 ### Continued development
 
-👉 ADD CONTENT HERE.
+- Because I added a theme switcher, there are much more color variables to account for when making it all accessible. It needs more work to make it fully accessible for all the color schemes.
 
 ### Useful resources
 
