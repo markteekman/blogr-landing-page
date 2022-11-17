@@ -6,12 +6,8 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 calc(var(--gap-default)/2);
+  padding: 0 calc(var(--gap-default));
   max-width: 100%;
-
-  @include breakpoint(medium) {
-    padding: 0 var(--gap-default);
-  }
 
   @include breakpoint(large) {
     padding: 0 calc(var(--gap-default)/2);
@@ -24,10 +20,10 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: var(--gap-default);
-  align-items: start;
+  // display: grid;
+  // grid-template-columns: repeat(12, 1fr);
+  // grid-gap: var(--gap-default);
+  // align-items: start;
 
   &.no-gutters {
     grid-gap: 0;

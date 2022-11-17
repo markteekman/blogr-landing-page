@@ -20,10 +20,6 @@ body {
   a {
     color: var(--action-color);
 
-    &:visited {
-      color: var(--action-color);
-    }
-
     &:hover,
     &:focus {
       color: var(--action-color);
