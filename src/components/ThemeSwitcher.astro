@@ -51,7 +51,7 @@
 <script>
   // switch themes
   const html = document.querySelector('html')
-  const currentTheme = localStorage.getItem('theme')
+  const currentTheme = localStorage.getItem('theme') || 'default'
   const themeSwitcher = document.querySelector('#theme-switcher')
   const themeSwitcherButtons = themeSwitcher.querySelectorAll('button')
 
