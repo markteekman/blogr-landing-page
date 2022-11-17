@@ -7,10 +7,10 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro'
 
 <DefaultLayout title="Frontend Mentor">
   <Hero />
-  <section class="grid place-items-center mt-16">
+  <div class="grid place-items-center mt-16">
     <MagicText />
     <ThemeSwitcher />
-  </section>
+  <div/>
   <section class="my-24 lg:mb-72 xl:mt-32 xl:mb-96">
     <div class="container relative space-content grid md:grid-cols-2 lg:gap-4 text-center lg:text-left">
       <h2 class="md:col-span-2 md:mb-12 lg:text-center">Designed for the future</h2>
@@ -21,23 +21,23 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro'
         >
         <img src="/blogr-landing-page/illustration-editor-mobile.svg" alt="">
       </picture>
-      <hgroup class="space-content">
+      <div class="space-content">
         <h3>Introducing an extensible editor</h3>
         <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
-      </hgroup>
-      <hgroup class="lg:row-start-3 space-content">
+      </div>
+      <div class="lg:row-start-3 space-content">
         <h3>Robust content management</h3> 
         <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
-      </hgroup>
+      </div>
     </div>
   </section>
   <section class="highlighted-section mt-[50%] md:my-[15%] pt-12 pb-24 md:pt-32 lg:py-32">
     <div class="container space-content grid md:grid-cols-2 md:gap-8 !-mt-[50%] md:!mt-0 pt-36 md:pt-0">
       <img class="animate fade-bottom apply-filter justify-self-center self-center md:absolute md:justify-self-start md:w-[50%] -top-36 md:-top-48" src="/blogr-landing-page/illustration-phones.svg" alt="">
-      <hgroup class="space-content md:text-left md:self-center md:col-start-2">
+      <div class="space-content md:text-left md:self-center md:col-start-2">
         <h2>State of the Art Infrastructure</h2>
         <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
-      </hgroup>
+      </div>
     </div>
     <div class="bg-decoration" />
   </section>
@@ -50,14 +50,14 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro'
         >
         <img src="/blogr-landing-page/illustration-laptop-mobile.svg" alt="">
       </picture>
-      <hgroup class="lg:col-start-2 space-content">
+      <div class="lg:col-start-2 space-content">
         <h3>Free, open, simple</h3>
         <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
-      </hgroup>
-      <hgroup class="lg:col-start-2 lg:row-start-3 space-content">
+      </div>
+      <div class="lg:col-start-2 lg:row-start-3 space-content">
         <h3>Powerful tooling</h3>
         <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
-      </hgroup>
+      </div>
     </div>
   </section>
 </DefaultLayout>

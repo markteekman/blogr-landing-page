@@ -81,8 +81,6 @@ svg {
 
 - How to make a magic sparkling text by following the tutorial by [Hyperplexed](https://www.youtube.com/watch?v=yu0Cm4BqQv0). This was a lot of fun to do and I learned more about using JavaScript to create random animations.
 
-- I already knew about `<hgroup>` but in this project I started using it more extensively. The `<hgroup>` element represents a heading and related content. It groups a single `<h1>-<h6>` element with one or more `<p>` tags. 
-
 ### Continued development
 
 - It would be cool to add a Dark Mode to the Theme Switcher. It would require a bit of extra work and extra Custom Properties, but it would be a nice addition to the Theme Switcher.
