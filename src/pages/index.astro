@@ -1,94 +1,131 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
 ---
 
 <DefaultLayout title="Frontend Mentor">
-  <section class="margin-48">
-    <div class="container space-content">
-      <h1
-        class="md:bg-red-500 text-bold text-lg font-bold from-neutral-800 md:text-md px-3 py-4 rounded-md text-center text-neutral-800 to-neutral-800"
-      >
-        Frontend Mentor Challenge <em>Starter</em>
-      </h1>
-      Product
-
-      Overview
-      Pricing
-      Marketplace
-      Features
-      Integrations
-
-      Company
-
-      About
-      Team
-      Blog
-      Careers
-
-      Connect
-
-      Contact
-      Newsletter
-      LinkedIn
-      
-      Login
-      Sign Up
-
-      A modern publishing platform
-      Grow your audience and build your online brand
-
-      Start for Free
-      Learn More
-
-      Designed for the future
-
-      Introducing an extensible editor
-      Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-      The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-      videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-      change the looks of a blog.
-
-      Robust content management
-      Flexible content management enables users to easily move through posts. Increase the usability of your blog 
-      by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
-
-      State of the Art Infrastructure
-      With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-      This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-
-      Free, open, simple
-      Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-      features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
-      and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
-
-      Powerful tooling
-      Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-      capable of producing even the most complicated sites.
-
-      Product
-
-      Overview
-      Pricing
-      Marketplace
-      Features
-      Integrations
-
-      Company
-
-      About
-      Team
-      Blog
-      Careers
-
-      Connect
-      
-      Contact
-      Newsletter
-      LinkedIn
+  <Hero />
+  <section class="my-24 lg:mb-72 xl:mt-32 xl:mb-96">
+    <div class="container relative space-content grid md:grid-cols-2 lg:gap-4 text-center lg:text-left">
+      <h2 class="md:col-span-2 md:mb-12 lg:text-center">Designed for the future</h2>
+      <picture class="animate fade-left apply-filter justify-self-center md:col-span-2 lg:absolute lg:-z-10 lg:-top-[10%] lg:-right-[25%] lg:left-[60%] xl:-top-[25%] xl:-right-[50%]">
+        <source
+          srcset="/illustration-editor-desktop.svg"
+          media="(min-width: 1024px)"
+        >
+        <img src="/illustration-editor-mobile.svg" alt="">
+      </picture>
+      <hgroup class="space-content">
+        <h3>Introducing an extensible editor</h3>
+        <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
+      </hgroup>
+      <hgroup class="lg:row-start-3 space-content">
+        <h3>Robust content management</h3> 
+        <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+      </hgroup>
+    </div>
+  </section>
+  <section class="highlighted-section mt-[50%] md:my-[15%] pt-12 pb-24 md:pt-32 lg:py-32">
+    <div class="container space-content grid md:grid-cols-2 md:gap-8 !-mt-[50%] md:!mt-0 pt-36 md:pt-0">
+      <img class="animate fade-bottom apply-filter justify-self-center self-center md:absolute md:justify-self-start md:w-[50%] -top-36 md:-top-48" src="/illustration-phones.svg" alt="">
+      <hgroup class="space-content md:text-left md:self-center md:col-start-2">
+        <h2>State of the Art Infrastructure</h2>
+        <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+      </hgroup>
+    </div>
+    <div class="bg-decoration" />
+  </section>
+  <section class="my-24 lg:mt-96 lg:mb-96">
+    <div class="container relative space-content grid md:grid-cols-2 lg:gap-4 text-center lg:text-left">
+      <picture class="animate fade-right apply-filter justify-self-center md:col-span-2 lg:absolute lg:-z-10 lg:-top-[30%] lg:-left-[30%] lg:right-[50%] xl:-top-[35%] xl:-right-[50%]">
+        <source
+          srcset="/illustration-laptop-desktop.svg"
+          media="(min-width: 1024px)"
+        >
+        <img src="/illustration-laptop-mobile.svg" alt="">
+      </picture>
+      <hgroup class="lg:col-start-2 space-content">
+        <h3>Free, open, simple</h3>
+        <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+      </hgroup>
+      <hgroup class="lg:col-start-2 lg:row-start-3 space-content">
+        <h3>Powerful tooling</h3>
+        <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
+      </hgroup>
     </div>
   </section>
 </DefaultLayout>
 
-<script>
-  console.log('Hello from the client!')
-</script>
+<style lang="scss">
+  .highlighted-section {
+    position: relative;
+    color: var(--neutral-100);
+    background-image: var(--theme-gradient-highlighted);
+    text-align: center;
+    border-top-right-radius: 6rem;
+    border-bottom-left-radius: 6rem;
+
+    > * {
+      position: inherit;
+      z-index: 2;
+    }
+
+    .bg-decoration {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      overflow: hidden;
+      border-top-right-radius: 6rem;
+      border-bottom-left-radius: 6rem;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -90% 0 0;
+        background-image: url('/bg-pattern-circles.svg');
+        background-size: 140%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @apply md:bg-left-top md:bg-contain;
+      }
+    }
+  }
+
+  .fade-left {
+    opacity: 0;
+    transform: translateX(15rem);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-bottom {
+    opacity: 0;
+    transform: translateY(15rem);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-right {
+    opacity: 0;
+    transform: translateX(-15rem);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .apply-filter {
+    filter: var(--theme-image-filter);
+  }
+</style>
