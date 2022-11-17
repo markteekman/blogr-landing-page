@@ -58,7 +58,7 @@ let subtitle = 'Blogr Landing Page'
     .map((_,i) => `color: hsl(${(i * HUE_STEP) + HUE_OFFSET}deg, 100%, 70%);`)
 
   console.info(figlet, ...styles)
-  console.info("%cHey there explorer! Why not checkout my GitHub profile while you're here 🚀 https://github.com/markteekman/",`color: hsl(${(5 * HUE_STEP) + HUE_OFFSET}deg, 100%, 70%); font-size: 1.3rem`);
+  console.info("%cHey there explorer! Why not checkout my GitHub profile while you're here 🚀 https://github.com/markteekman/",`color: hsl(${(5 * HUE_STEP) + HUE_OFFSET}deg, 100%, 70%); font-size: 14px`);
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
