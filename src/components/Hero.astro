@@ -1,0 +1,82 @@
+---
+import ThemeSwitcher from './ThemeSwitcher.astro'
+---
+
+<section class="hero pt-52 pb-40">
+  <div class="container relative z-10 flex flex-col items-center gap-6">
+    <hgroup class="flex flex-col gap-6 text-center">
+      <h1 class="text-3xl md:text-4xl lg:text-6xl">A modern publishing platform </h1>
+      <p class="text-lg">Grow your audience and build your online brand</p>
+    </hgroup>
+    <div class="buttons flex gap-4 mt-8">
+      <a href="#">Start for free</a>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+</section>
+<section>
+  <ThemeSwitcher />
+</section>
+
+<style lang="scss">
+  .hero {
+    position: relative;
+    color: var(--neutral-900);
+    background-image: var(--theme-gradient-cta);
+    border-bottom-left-radius: 6rem;
+    overflow: hidden;
+
+    h1 {
+      font-weight: 500;
+    }
+
+    .buttons {
+      a {
+        display: grid;
+        place-items: center;
+        padding: 0.75rem 1rem;
+        border-radius: 60rem;
+        font-weight: bold;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:first-of-type {
+          color: var(--theme-cta-text);
+          background-color: var(--neutral-900);
+
+          &:hover,
+          &:focus {
+            color: var(--neutral-100);
+          }
+        }
+
+        &:last-of-type {
+          color: var(--neutral-900);
+          border: 2px solid var(--neutral-900);
+          
+          &:hover,
+          &:focus {
+            color: var(--theme-cta-text);
+            background-color: var(--neutral-900);
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('/bg-pattern-intro-mobile.svg');
+      background-repeat: no-repeat;
+      background-size: 300%;
+      background-position: 30% 40%;
+      filter: var(--theme-hero-filter);
+    }
+  }
+</style>
