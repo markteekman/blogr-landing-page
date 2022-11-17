@@ -1,36 +1,48 @@
 ---
 import '../assets/scss/globals.scss'
+import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const { title } = Astro.props
-let subtitle = 'PROJECT NAME'
+let subtitle = 'Blogr Landing Page'
 ---
 
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="default">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="PROJECT-URL/favicon.png">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/blogr-landing-page/favicon.png"
+    />
 
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"> 
 
     <!-- open graph -->
-    <meta property="og:title" content="PROJECT NAME">
-    <meta property="og:description" content="PROJECT DESCRIPTION">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://markteekman.github.io/">
-    <meta property="og:image" content="PROJECT-URL/social-preview-image.png">
+    <meta property="og:title" content="Blogr Landing Page" />
+    <meta property="og:description" content="PROJECT DESCRIPTION" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://markteekman.github.io/blogr-landing-page"
+    />
+    <meta
+      property="og:image"
+      content="/blogr-landing-page/social-preview-image.png"
+    />
 
     <!-- page title -->
     <title>{title} - {subtitle}</title>
   </head>
-  <body>
+  <body class="relative">
+    <Header />
     <main id="main-content">
       <slot />
     </main>
@@ -38,20 +50,57 @@ let subtitle = 'PROJECT NAME'
   </body>
 </html>
 
-<style lang="scss">
+<script>
+  const figlet = `
+%c __  __            _    _____         _                          
+%c|  \\/  | __ _ _ __| | _|_   _|__  ___| | ___ __ ___   __ _ _ __  
+%c| |\\/| |/ _\\ | '__| |/ / | |/ _ \\/ _ \\ |/ / '_ \\ _ \\ / _\\ | '_ \\ 
+%c| |  | | (_| | |  |   <  | |  __/  __/   <| | | | | | \(_| | | | |
+%c|_|  |_|\\__,_|_|  |_|\\_\\ |_|\\___|\\___|_|\\_\\_| |_| |_|\\__,_|_| |_|
+%c
+`
+
+  const HUE_STEP = -30
+  const HUE_OFFSET = 10
+
+  const styles = new Array(6)
+    .fill(0)
+    .map((_,i) => `color: hsl(${(i * HUE_STEP) + HUE_OFFSET}deg, 100%, 70%);`)
+
+  console.info(figlet, ...styles)
+  console.info("%cHey there explorer! Why not checkout my GitHub profile while you're here 🚀 https://github.com/markteekman/",`color: hsl(${(5 * HUE_STEP) + HUE_OFFSET}deg, 100%, 70%); font-size: 1.3rem`);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible')
+      }
+    })
+  }, { threshold: 0.25 })
+
+  const elements = document.querySelectorAll('.animate')
+  elements.forEach((element) => {
+    observer.observe(element)
+  })
+</script>
+
+<style lang="scss" is:global>
   :root {
-    // base colors
-    --font-family-default: "Open Sans", sans-serif;
-    --font-family-special: "Open Sans", sans-serif;
-    --font-color: var(--neutral-900);
-    --background: var(--neutral-100);
-    --action-color: var(--secondary-500);
-    // theme colors
-    --color-light-cyan: hsl(193, 38%, 86%);
-    --color-neon-green: hsl(150, 100%, 66%);
-    --color-grayish-blue: hsl(217, 19%, 38%);
-    --color-dark-grayish-blue: hsl(217, 19%, 24%);
-    --color-dark-blue: hsl(218, 23%, 16%);
+    --theme-gradient-highlighted: linear-gradient(90deg, hsl(237, 17%, 21%) 0%, hsl(237, 23%, 32%) 100%);
+    --theme-body-bg: hsl(0, 0%, 100%);
+    --theme-body-copy: hsl(207, 13%, 34%);
+    --theme-headings: hsl(208, 49%, 24%);
+    --theme-menu-items: hsl(240, 10%, 16%);
+    --theme-menu-dropdown: hsl(240, 7%, 94%);
+    --theme-body-copy: hsl(207, 13%, 34%);
+    --theme-footer-text: hsl(240, 2%, 79%);
+    --theme-footer-bg: hsl(240, 10%, 16%);
+
+    --font-family-default: 'Overpass', sans-serif;
+    --font-family-special: 'Ubuntu', sans-serif;
+    --font-color: var(--theme-body-copy);
+    --background: var(--theme-body-bg);
+    --action-color: var(--theme-cta-text);
   }
 
   html,
@@ -63,7 +112,7 @@ let subtitle = 'PROJECT NAME'
   body {
     display: flex;
     flex-direction: column;
-    background-color: var(--background);
+    background-image: var(--background);
 
     main {
       flex: 1 0 auto;
@@ -72,5 +121,15 @@ let subtitle = 'PROJECT NAME'
     footer {
       flex-shrink: 0;
     }
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  header,
+  .hero > .container {
+    opacity: 0;
+    animation: fade-in ease-in 0.3s forwards;
   }
 </style>
