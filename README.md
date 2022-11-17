@@ -39,7 +39,7 @@ As an extra challenge I will do the following things:
 
 ### Links
 
-- [Solution URL]()
+- [Solution URL](https://www.frontendmentor.io/solutions/astro-wcag-accessibility-theme-switcher-intersectionobserver-api-46NWfLGB-z)
 - [Live Site URL](https://markteekman.github.io/blogr-landing-page/)
 
 ## My process
