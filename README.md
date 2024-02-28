@@ -31,7 +31,7 @@ As an extra challenge I will do the following things:
 
 - Add a color theme switcher, with about five themes, that is persisted in `localStorage`.
 - Add smooth animations for better interactivity on the hero, images and buttons.
-- Make the game accessible according to WCAG 2.1 standards, things like color contrast, clear element focus and the correct screen reader contexts.
+- Make the page accessible according to WCAG 2.1 standards, things like color contrast, clear element focus and the correct screen reader contexts.
 
 ### Screenshot
 
